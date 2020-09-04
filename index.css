@@ -1,0 +1,128 @@
+body{
+    font-family: Tahoma;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+h1{
+    font-weight: normal;
+}
+
+#wrapper{
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+}
+
+#page-banner{
+    background: #eee ;
+    padding: 10px 0;
+
+}
+
+#page-banner h1{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#task-list{
+    overflow-y: scroll;
+}
+
+#task-list::-webkit-scrollbar {
+    display: none;
+}
+
+#task-list, #add-task, #tabbed-content{
+    margin: 30px;
+}
+
+#task-list ul, #tabbed-content ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#task-list li{
+    padding: 20px;
+    border-left: 5px solid #ddd;
+    margin: 20px 10px;
+}
+
+#task-list li:hover{
+    border-color: #9361bf;
+}
+
+#add-task{
+    width: 300px;
+    margin: 0 auto;
+}
+
+#add-task input{
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float: left;
+}
+
+.emoji{
+    float: right;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submitButton{
+    border: 1px solid #9361bf;
+    background: #9361bf;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}
+
+#add-task:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    #wrapper {
+      width: 80%;
+    }
+    
+    #add-task input{
+        font-size: 12px;
+        width: 250px;
+        box-sizing: initial;
+    }
+
+    #add-task button{
+        font-size: 12px;
+    }
+
+    #add-task{
+        margin: 1 auto;
+    }
+
+    #task-list li{
+        padding: 10px;
+    }
+}
