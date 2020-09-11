@@ -1,38 +1,36 @@
-const input = document.getElementById('details');
-var list = document.querySelector('#task-list ul');
+const form = document.querySelector('form');
+const ul = document.querySelector('ul');
+const button = document.querySelector('button');
+const input = document.getElementById('item');
+let itemsArray = sessionStorage.getItem('items') ? JSON.parse(sessionStorage.getItem('items')) : [];
 
-let itemsArray = sessionStorage.getItem('items')
-  ? JSON.parse(sessionStorage.getItem('items'))
-  : []
+sessionStorage.setItem('items', JSON.stringify(itemsArray));
+const data = JSON.parse(sessionStorage.getItem('items'));
 
-sessionStorage.setItem('items', JSON.stringify(itemsArray))
-const data = JSON.parse(sessionStorage.getItem('items'))
+const liMaker = (text) => {
+  const li = document.createElement('li');
+  const taskDate = document.createElement('span');
 
-const task = document.forms['add-task'];
+  li.textContent = text;
+  taskDate.innerHTML = '&#128198'
 
-    //add Tasks
-    task.addEventListener('submit', function(e){
-    e.preventDefault();
-    const value = task.querySelector('input[type = "text"]').value;
-    const date = task.querySelector('input[type = "date"]').value;
-    itemsArray.push(value)
-    sessionStorage.setItem('items', JSON.stringify(itemsArray))
+  taskDate.classList = 'emoji'
 
-    //create Element
-    const liname = document.createElement('li');
-    const taskDate = document.createElement('span');
-
-    //add Context
-    liname.textContent = value;
-    taskDate.innerHTML = '&#128198'
-
-    // add classes
-    taskDate.classList = 'emoji'
-
-    // append to docuement
-    liname.appendChild(taskDate);
-    list.appendChild(liname);
-
- });
+  li.appendChild(taskDate);
+  ul.appendChild(li)
+}
 
 
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  itemsArray.push(input.value);
+  sessionStorage.setItem('items', JSON.stringify(itemsArray));
+  liMaker(input.value);
+  input.value = "";
+});
+
+data.forEach(item => {
+  liMaker(item);
+});

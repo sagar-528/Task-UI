@@ -1,26 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="index.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <div id="wrapper">
-	    	<div id="page-banner">
-	    		<h1 class="title">Task</h1>
-	    	</div>
-        <div id="task-list">
-          <ul>
-          </ul>
-        </div>
-        <form id="add-task">
-          <input id="details" type="text" placeholder="Add a Task..." />
-          <input type="date" value="2014-02-09"/>
-          <button class="submitButton">Add</button>
-        </form>
-      <script src="script.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>New Tab App</title>
+  <link href="index.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div id="page-banner">
+      <h1 class="title">Task</h1>
     </div>
-  </body>
+    <div id="task-list">
+      <ul>
+      </ul>
+    </div>
+    <div class="container">
+    <form>
+      <div class="inputSize">
+        <input type="text" id="item" placeholder="New Task">
+      </div>
+      <div class="inputSize">
+        <input type="date" value="2014-02-09">
+      </div>
+      <button class="submitButton">Add</button>
+    </form>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

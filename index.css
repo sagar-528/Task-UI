@@ -17,6 +17,7 @@ h1{
     padding: 0 0 20px;
     overflow: hidden;
     border: 1px solid lightgray;
+    
 }
 
 #page-banner{
@@ -32,7 +33,7 @@ h1{
 }
 
 #task-list{
-    overflow-y: scroll;
+    height: 100%;
 }
 
 #task-list::-webkit-scrollbar {
@@ -46,6 +47,7 @@ h1{
 #task-list ul, #tabbed-content ul{
     list-style-type: none;
     padding: 0;
+    
 }
 
 #task-list li{
@@ -58,71 +60,59 @@ h1{
     border-color: #9361bf;
 }
 
-#add-task{
-    width: 300px;
-    margin: 0 auto;
-}
-
-#add-task input{
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    border-radius: 4px 0 0 4px;
-    box-sizing: border-box;
-    width: 300px;
-    float: left;
-}
-
+/* ul{
+  overflow: scroll;
+} */
+  
 .emoji{
     float: right;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.submitButton{
-    border: 1px solid #9361bf;
+  * {
+    box-sizing: border-box;
+  }
+  
+  input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin: 10px 0;
+  }
+  
+  .submitButton {
     background: #9361bf;
-    padding: 10px 20px;
-    font-size: 16px;
-    display: inline-block;
-    margin: 0;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    width: 100px;
-    margin: 20px 0;
-    border-left: 0;
     color: white;
-}
-
-#add-task:after{
-    content: '';
-    display: block;
-    clear: both;
-}
-
-@media only screen and (max-width:620px) {
-    /* For mobile phones: */
-    #wrapper {
-      width: 80%;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .submitButton:hover {
+    background: #9361bf;
+  }
+  
+  .container {
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* .inputSize {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  } */
+  
+  /* @media screen and (max-width: 600px) {
+     .inputSize, .submitButton {
+      width: 100%;
+      margin-top: 0;
     }
-    
-    #add-task input{
-        font-size: 12px;
-        width: 250px;
-        box-sizing: initial;
-    }
-
-    #add-task button{
-        font-size: 12px;
-    }
-
-    #add-task{
-        margin: 1 auto;
-    }
-
-    #task-list li{
-        padding: 10px;
-    }
-}
+  } */
